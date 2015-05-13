@@ -1,0 +1,16 @@
+<template name="header">
+
+  <div class="masthead clearfix">
+    <div class="inner">
+      <h3 class="masthead-brand">Tailgun</h3>
+      <nav>
+        <ul class="nav masthead-nav">
+          <li class="{{ isActiveRoute regex='home'}}"><a href="{{pathFor 'home'}}">Home</a></li>
+          <li class="{{ isActiveRoute regex='hello'}}"><a href="{{pathFor 'hello'}}">Hello</a></li>
+          <li class="{{ isActiveRoute regex='getUnsub'}}"><a href="{{pathFor 'getUnsub'}}">Get Unsubscribes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</template>

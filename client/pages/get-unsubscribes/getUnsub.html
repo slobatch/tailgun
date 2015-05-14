@@ -16,12 +16,14 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <table>
-        {{#each requests}}
-          <tr>
-            {{> request}}
-          </tr>
-        {{/each}}
+      <table class="table table-striped">
+        <tbody>
+          {{#each requests}}
+            <tr>
+              {{> request}}
+            </tr>
+          {{/each}}
+        </tbody>
       </table>
     </div>
   </div>
@@ -36,6 +38,6 @@
 </template>
 
 <template name="request">
-  <td>Mailing list:{{address}}</td>
-  <!-- <td>API Key: {{key}}</td> -->
+  <td>Mailing list: {{address}}</td>
+  <td>API Key: {{key}}</td>
 </template>

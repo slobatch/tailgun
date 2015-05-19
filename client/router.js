@@ -2,6 +2,25 @@ Router.configure({
    layoutTemplate: 'tailgun'  //can be any template name
  });
 
+Router.route('/',
+  function(){
+    this.render('home');
+  },
+  {name: 'home'}
+);
+
+Router.route('/hello',
+  {name: 'hello'}
+);
+
+Router.route('/get-unsubscribes',
+  {name: 'getUnsub'}
+);
+
+Router.route('/(.*)',
+  {name: 'shotDown'}
+);
+
 // Router.map(function(){
 //   this.route('home', {path: '/'} );
 //   this.route('hello', {path: '/hello'});
@@ -11,19 +30,3 @@ Router.configure({
 //     path: '/(.*)'
 //   });
 // });
-
-Router.route('/', function(){
-  this.render('home');
-});
-
-Router.route('/hello', function(){
-  this.render('hello');
-});
-
-Router.route('/get-unsubscribes', function(){
-  this.render('getUnsub');
-});
-
-Router.route('/(.*)', function(){
-  this.render('shotDown');
-});

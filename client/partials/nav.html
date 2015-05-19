@@ -1,16 +1,29 @@
 <template name="nav">
 
   <div class="masthead">
-    <div class="inner">
-      <h3 class="masthead-brand">Tailgun</h3>
-      <nav>
-        <ul class="nav masthead-nav">
-          <li class="{{ isActiveRoute regex='home'}}"><a href="{{pathFor 'home'}}">Home</a></li>
-          <!-- <li class="{{ isActiveRoute regex='hello'}}"><a href="{{pathFor 'hello'}}">Hello</a></li> -->
-          <li class="{{ isActiveRoute regex='getUnsub'}}"><a href="{{pathFor 'getUnsub'}}">Get Unsubscribes</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          </button>
+          <a class="navbar-brand" href="{{pathFor 'home'}}">Tailgun</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="{{ isActiveRoute regex='home'}}"><a href="{{pathFor 'home'}}">Home</a></li>
+            <!-- <li class="{{ isActiveRoute regex='hello'}}"><a href="{{pathFor 'hello'}}">Hello</a></li> -->
+            <li class="{{ isActiveRoute regex='getUnsub'}}"><a href="{{pathFor 'getUnsub'}}">Get Unsubscribes</a></li>
+          </ul>
+          <button class="btn btn-mobile btn-default navbar-btn navbar-right">
+            {{> loginButtons}}
+          </button>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
   </div>
 
 </template>

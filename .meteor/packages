@@ -11,3 +11,5 @@ nemo64:bootstrap
 iron:router
 zimme:iron-router-active
 http
+accounts-ui
+accounts-password

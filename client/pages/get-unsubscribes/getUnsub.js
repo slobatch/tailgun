@@ -8,10 +8,6 @@ Template.getUnsub.helpers({
   }
 });
 
-Template.getUnsub.created({
-
-});
-
 
 Template.getUnsub.events({
   "submit .new-request": function (event) {

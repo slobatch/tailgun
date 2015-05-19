@@ -6,8 +6,8 @@
 
 meteor-platform
 autopublish
-insecure
 less
 nemo64:bootstrap
 iron:router
 zimme:iron-router-active
+http

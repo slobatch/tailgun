@@ -1,21 +1,47 @@
 <template name="getUnsub">
+  <div class="alert alert-warning get-unsub-alert" role="alert">
+    <a class="close" data-dismiss="alert">×</a>
+    <strong>Warning! This site is undergoing development. Request history is public.</strong>
+    <br />
+    If you use it as is, be aware that <strong>your API Key will be visible to anyone else running a session</strong>.<br />
+    It is strongly recommended to use the Mailgun sandbox domains to test this feature. If you decide to risk it, clear the request history so that your API key stays a little bit safer.
+  </div>
   <div class="row">
     <div class="col-xs-6">
+      <h3>Query:</h3>
       <form class="new-request">
         <div class="form-group">
-          <label for="exampleInputEmail1">Mailing list address</label>
-          <input type="text" class="form-control" name="mailingList" placeholder="Enter mailing list email">
+          <label for="mailgunDomain">Mailgun Domain</label>
+          <input type="text" class="form-control" name="mailgunDomain" placeholder="Enter your mailgunDomain">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">API Key</label>
+          <label for="mailingList">Mailing list address</label>
+          <input type="email" class="form-control" name="mailingList" placeholder="Enter mailing list email">
+        </div>
+        <div class="form-group">
+          <label for="apiKey">API Key</label>
           <input type="text" class="form-control" name="apiKey" placeholder="API Key">
         </div>
         <button type="submit" class="btn btn-default">Request</button>
+        <button type="button" class="clear-history btn btn-default">Clear History</button>
       </form>
+    </div>
+    <div class="col-xs-6">
+      <h3>Unsubscribed Users:</h3>
+      <table class="table table-striped">
+        <tbody>
+          {{#each unsubscribedUsers}}
+            <tr>
+              {{> unsubscribedUser}}
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
+      <h3>History of requests</h3>
       <table class="table table-striped">
         <tbody>
           {{#each requests}}
@@ -37,7 +63,15 @@
   <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </template>
 
+<template name="unsubscribedUser">
+  <td>Email: {{address}}</td>
+  <td>Date Created: {{created_at}}</td>
+  <td>Tags: {{tags}}</td>
+</template>
+
 <template name="request">
+  <td>Mailgun domain: {{domain}}</td>
   <td>Mailing list: {{address}}</td>
   <td>API Key: {{key}}</td>
+  <td>Date created: {{createdAt}}</td>
 </template>

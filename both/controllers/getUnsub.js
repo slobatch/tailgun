@@ -1,5 +1,0 @@
-GetUnsubController = AppController.extend({
-  data: {
-
-  }
-});

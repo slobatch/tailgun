@@ -2,7 +2,7 @@
   // Server authentication info
   "servers": [
     {
-      "host": "54.86.197.37",
+      "host": "52.7.169.203",
       "username": "ubuntu",
       "pem": "~/.ssh/Tailgun.pem"
     }
@@ -15,7 +15,7 @@
   "setupNode": true,
 
   // WARNING: If nodeVersion omitted will setup 0.10.36 by default. Do not use v, only version number.
-  "nodeVersion": "0.12.2",
+  "nodeVersion": "0.10.38",
 
   // Install PhantomJS in the server
   "setupPhantom": true,

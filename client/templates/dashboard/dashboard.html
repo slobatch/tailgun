@@ -3,15 +3,27 @@
     <div class="page-header">
       <h1>Dashboard</h1>
     </div>
-
-    <h3>Account information</h3>
-    <p>Email address: {{userEmail}}</p>
-
-    <ul class="list-group">
+    <div class="row">
+      <div class="col-md-4 col-xs-12 col-sm-6">
+        <h3>Account information</h3>
+        <p>Email address: {{userEmail}}</p>
+        <p>User ID: {{userId}}</p>
+        <p>API Key: {{userApiKey}}</p>
+        <br />
+        <form class="api-form">
+          <div class="form-group">
+            <label for="apiKeyInput">API Key</label>
+            <input type="apiKey" class="form-control" id="apiKeyInput" placeholder="key-############">
+          </div>
+          <button type="submit" class="btn btn-default">Add API Key</button>
+        </form>
+      </div>
+    </div>
+    <!-- <ul class="list-group">
       {{#each items}}
         <li class="list-group-item">{{ name }} <span class="label label-default">{{ rating }}</span></li>
       {{/each}}
-    </ul>
+    </ul> -->
 
   </div>
 </template>
